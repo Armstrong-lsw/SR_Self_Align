@@ -1,0 +1,117 @@
+Metadata-Version: 1.1
+Name: basicsr
+Version: 1.1.1+66f778f
+Summary: Open Source Image and Video Super-Resolution Toolbox
+Home-page: https://github.com/xinntao/BasicSR
+Author: Xintao Wang
+Author-email: xintao.wang@outlook.com
+License: Apache License 2.0
+Description: # Deep learning self-alignment and attention-enhanced label-free nonlinear optical microscopy
+        
+        This project hosts the scripts for training Self_alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper:
+        
+        
+        The full paper is available at: []().
+        
+        ## Introduction
+        
+        To resolve the incompatibility between high speed, large area and high resolution, high contrast, we proposed the deep neural network architecture (Methods; Supplementary Fig. 1) to fast transform large-field inferior images to denoised superior images (Fig. 1a). Previous to this, due to the noncollinearity of the two scanning systems, we implemented an efficient image preregistration method[31] to achieve fore alignment between the input images and the GT images (Supplementary Fig. 2a and Supplementary Note 1). The preregistered paired images thereby formed the training dataset. Then, we proposed a self-aligning pyramid, cascading, and deformable convolutions (SAPCD) framework (Supplementary Fig. 2b and Supplementary Note 2) based on feature extraction and alignment[32]. This framework was embedded in the super-resolution networks to automatically learn and realize pixel-wise alignment between the preregistered input and GT images. The ablation study given in Methods demonstrates the necessity of the above preregistration and registration. Referring to the perceptual-driven residual-in-residual dense block in the enhanced super-resolution generative adversarial networks (ESRGAN)[33], we proposed the residual-in-residual dense attention block (RRDAB) as the basic block of the generator (Supplementary Fig. 3a,b and Supplementary Note 3). Benefiting from the dense connections and feature attentions, RRDAB has a higher capacity for improving image quality and resolution while retaining real features than the original residual block in the ESRGAN. Especially, the integrated attention mechanisms (Supplementary Fig. 3b) can explicitly model interdependencies of the feature maps and inter-spatial relationship of the feature regions, respectively, within the residual blocks for feature recalibration. For the discriminator (Methods and Supplementary Fig. 1), we combined spectral normalizations[29, 30] to stabilize the GAN training. We also introduced the perceptual loss function (Supplementary Fig. 3c and Supplementary Note 4) based on high-level features extracted from the pretrained VGG19 networks[36] to increase convergence speed and better reconstruct fine details and edges.
+        ![DLAM](image/DLAM1.png)
+        
+        ## Dependencies and Installation
+        
+        This project is based on [BasicSR](https://github.com/xinntao/BasicSR). Therefore the main step of installation is the same as original BasicSR.
+        
+        Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html))
+        - [PyTorch >= 1.3](https://pytorch.org/)
+        - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
+        
+        1. Clone repo
+        
+            ```bash
+            git clone https://github.com/Armstrong-lsw/SR_Self_Align.git
+            ```
+        
+        1. Install dependent packages
+        
+            ```bash
+            cd SR_Self_Align
+            pip install -r requirements.txt
+            ```
+        
+        1. Install SR_Self_Align
+        
+            Please run the following commands in the **SR_Self_Align root path** to install SR_Self_Align:<br>
+            (Make sure that your GCC version: gcc >= 5) <br>
+            The cuda extensions: <br>
+            &emsp;[*dcn* for SR_Self_Align](basicsr/models/ops)<br>
+            are necessary.
+        
+            ```bash
+            python setup.py develop
+            ```
+           
+        Please refer to [INSTALL.md](docs/INSTALL.md) for installation and dataset preparation.
+        
+        
+        Note that BasicSR is only tested in Ubuntu, and may be not suitable for Windows. You may try [Windows WSL with CUDA supports](https://docs.microsoft.com/en-us/windows/win32/direct3d12/gpu-cuda-in-wsl) :-) (It is now only available for insider build with Fast ring).
+        
+        ## Dataset Preparation
+        
+        1. Download the datasets from the [ovarian_SR_dataset](https://drive.google.com/file/d/1-0AukQ7ffH-njMtt70unDxUcchfqUphx/view?usp=sharing). Use orb-match to match source and target image pairs. <br>
+        For data_ovarian, we can merge 3 channels(c1,c2,c3) images into RGB image for display, c1 for B channel,c2 for G channel,c3 for R channel.<br>
+        `tar xzf data_ovarian.tar`，copy path to `datasets`，It is recommended to symlink the dataset root to `datasets` with the command `ln -s data_ovarian_path datasets/data_ovarian`.
+        2. Please refer to [DataPreparation_For_Ovarian](scripts/datasets/DataPreparation_For_Ovarian.md). It mainly includes match the low-high resolution images with ORB algorithm and how to make train, test and val datasets.
+        2. Please refer to [DataPreparation](docs/DatasetPreparation.md). It explains how to make sub-image train set. Processing for our ovarian dataset is similar to DIV2K's.
+        
+        ## Train and Test
+        
+        - **Training and testing commands**: For single gpu, use the following command as example.<br>
+        1. **Training**
+            ```bash
+            CUDA_VISIBLE_DEVICES=0 python basicsr/train.py -opt options/train/RRDB/train_SR_Self_Align_sesam.yml
+            ```
+        2. **Testing**
+            ```bash
+            CUDA_VISIBLE_DEVICES=0 python basicsr/test.py -opt options/test/RRDB/test_SR_Self_Align_sesam.yml
+            ```
+            Please see **[TrainTest.md](docs/TrainTest.md)** for detail.<br>
+        - **Options/Configs**: Please refer to [Config.md](docs/Config.md).<br>
+        For testing, you can download our pretrain model [pretrain_model_ovarian](https://drive.google.com/drive/folders/1-3Q7NRxZ38JEol6Z0EcI5niKA-DTo7KK?usp=sharing) (SR_Self_Align_x4_sesam_net_g.pth for example), and replace config pretrain_network_g in test .yml file. 
+        - **Postprocessing**: Please refer to [DataPreparation_For_Ovarian](scripts/datasets/DataPreparation_For_Ovarian.md). After inference, merge sub image blocks into origin size: 
+            ```
+            python scripts/datasets/test/merge_big_crop.py
+            ```
+        ## Results
+        
+        Some of our results and comparison with SRResNet, ResNet-GAN, RRDB-GAN are exhibited below. For more results and further analyses, please refer to the companion paper in our [paper]().<br>
+        
+        ![results_compare](image/comp.png)
+        
+        ## Acknowledgement
+        
+        Thanks [BasicSR](https://github.com/xinntao/BasicSR) auther Xintao Wang for the wonderful open source project!
+        
+        
+        ## Citation
+        
+        If you find SR_Self_Align useful in your research, please consider citing this project.
+        
+        ```
+        @article{shen&liu2022sr_self_align,
+          title={Deep learning self-alignment and attention-enhanced label-free nonlinear optical microscopy},
+          author={Binglin, Shen.†, Shaowen, Liu.†, Yanping, Li., Ying, Pan., Yuan, Lu., Yide, Zhang., Rui, Hu., Liwei, Liu., Junle, Qu.}
+        ,
+          journal={light: science & applications},
+          year={2021}
+        }
+        ```
+        
+Keywords: computer vision,restoration,super resolution
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8

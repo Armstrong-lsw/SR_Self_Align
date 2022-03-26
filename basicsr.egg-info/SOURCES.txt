@@ -1,0 +1,16 @@
+README.md
+setup.cfg
+setup.py
+basicsr.egg-info/PKG-INFO
+basicsr.egg-info/SOURCES.txt
+basicsr.egg-info/dependency_links.txt
+basicsr.egg-info/not-zip-safe
+basicsr.egg-info/requires.txt
+basicsr.egg-info/top_level.txt
+basicsr/models/ops/dcn/src/deform_conv_cuda.cpp
+basicsr/models/ops/dcn/src/deform_conv_cuda_kernel.cu
+basicsr/models/ops/dcn/src/deform_conv_ext.cpp
+basicsr/models/ops/fused_act/src/fused_bias_act.cpp
+basicsr/models/ops/fused_act/src/fused_bias_act_kernel.cu
+basicsr/models/ops/upfirdn2d/src/upfirdn2d.cpp
+basicsr/models/ops/upfirdn2d/src/upfirdn2d_kernel.cu

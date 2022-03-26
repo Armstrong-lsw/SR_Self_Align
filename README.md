@@ -1,6 +1,6 @@
 # Deep learning autofluorescence-harmonic microscopy
 
-This project hosts the scripts (available after publication) for training self_alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper:
+This project hosts the scripts (available after publication) for training self-alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper:
 
 
 ## Introduction
@@ -43,10 +43,7 @@ Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#li
 
 ## Dataset Preparation
 
-1. Download the datasets from the [ovarian_SR_dataset](https://drive.google.com/file/d/1-0AukQ7ffH-njMtt70unDxUcchfqUphx/view?usp=sharing). Use orb-match to match source and target image pairs. <br>
-For data_ovarian, we can merge 3 channels(c1,c2,c3) images into RGB image for display, c1 for B channel,c2 for G channel,c3 for R channel.<br>
-`tar xzf data_ovarian.tar`，copy path to `datasets`，It is recommended to symlink the dataset root to `datasets` with the command `ln -s data_ovarian_path datasets/data_ovarian`.
-2. Please refer to [DataPreparation.md](scripts/datasets/DataPreparation.md). It mainly includes match the low-high resolution images with ORB algorithm and how to make train, test and val datasets.
+Please refer to [DataPreparation.md](scripts/datasets/DataPreparation.md). It mainly includes match the low-high resolution images with ORB algorithm and how to make train, test and val datasets.
 
 
 ## Train and Test
