@@ -1,6 +1,6 @@
 # Deep learning autofluorescence-harmonic microscopy
 
-This project hosts the scripts (available after publication) for training self-alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper:
+This project hosts the scripts for training self-alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper (available after publication):
 
 
 ## Introduction
