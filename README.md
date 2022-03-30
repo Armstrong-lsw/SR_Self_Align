@@ -1,6 +1,6 @@
 # Deep learning autofluorescence-harmonic microscopy
 
-This project hosts the scripts for training self-alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper (available after publication):
+This project hosts the scripts for training self-alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper: https://www.nature.com/articles/s41377-022-00768-x
 
 
 ## Introduction
@@ -51,11 +51,11 @@ Please refer to [DataPreparation.md](scripts/datasets/DataPreparation.md). It ma
 - **Training and testing commands**: For single gpu, use the following command as example.<br>
 1. **Training**
     ```bash
-    CUDA_VISIBLE_DEVICES=0 python basicsr/train.py -opt options/train/RRDB/train_SR_Self_Align_sesam.yml
+    CUDA_VISIBLE_DEVICES=0 python basicsr/train.py -opt options/train/RRDAB/train_SR_Self_Align_sesam.yml
     ```
 2. **Testing**
     ```bash
-    CUDA_VISIBLE_DEVICES=0 python basicsr/test.py -opt options/test/RRDB/test_SR_Self_Align_sesam.yml
+    CUDA_VISIBLE_DEVICES=0 python basicsr/test.py -opt options/test/RRDAB/test_SR_Self_Align_sesam.yml
     ```
     Please see **[TrainTest.md](docs/TrainTest.md)** for detail.<br>
 - **Options/Configs**: Please refer to [Config.md](docs/Config.md).<br>
