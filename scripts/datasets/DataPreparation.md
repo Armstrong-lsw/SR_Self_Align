@@ -1,5 +1,5 @@
 ##DataPreparation: <br> 
-we merge 3 channels images into RGB image for display, c1 for B channel, c2 for G channel, c3 for R channel.<br>
+We merge 3 channels images into RGB image for display, c1 for B channel, c2 for G channel, c3 for R channel.<br>
 
 For training, we merge R and G channel images and train one SR model; train another model for B channel images.
 Because R channel images data preparation is diffrent from B and G in orb_match step. <br>
@@ -23,7 +23,7 @@ for data preparation, we follow these steps.
     ```
 
 
-4. The training patches are usually small (In our training, LR: 64x64, HR: 256x256 for low-high resolution training patch). So there is a waste if reading the whole image but only using a very small part of it. In order to accelerate the IO speed during training, we crop the 2K->8K resolution image pairs to sub-image pairs 
+4. The training patches are usually small (In our training, LR: 64x64, HR: 256x256 for low-high resolution training patch). So there is a waste if reading the whole image but only using a very small part of it. In order to accelerate the IO speed during training, we crop the 2K->8K resolution image pairs to sub-image pairs. 
 Note that the size of sub-images is different from the training patch size (`gt_size`) defined in the config file. Specifically, the cropped sub-images with 512x512 are stored. The dataloader will further randomly crop the sub-images to `GT_size x GT_size` patches for training. <br/>
     
     ```
@@ -35,7 +35,7 @@ Note that the size of sub-images is different from the training patch size (`gt_
    scripts/datasets/train/python scripts/create_lmdb_sor_tar.py
    ```
 
-6. make validation set after [### For testing] Step. 4.
+6. make validation set after [For testing] Step. 4.
 
 
 ### For testing
