@@ -12,7 +12,7 @@ for data preparation, we follow these steps.
     scripts/datasets/train/rename_sor_tar.py
     ```
    
-2. Image warping with orb:
+2. Image warping with ORB:
     ```
     scripts/datasets/train/orb_warping.py
     ```
@@ -41,7 +41,7 @@ Note that the size of sub-images is different from the training patch size (`gt_
 ### For testing
 1. For convenience, we rename raw dataset image name [can use other approaches to do this]:
    
-2. Image warping with orb:
+2. Image warping with ORB:
     ```
     scripts/datasets/test/test_orb_warping.py
     ```
