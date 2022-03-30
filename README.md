@@ -17,7 +17,7 @@ Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#li
 1. Clone repo
 
     ```bash
-    git clone https://github.com/shenblin/DLAM.git
+    git clone https://github.com/Armstrong-lsw/SR_Self_Align.git
     ```
 
 2. Install dependent packages
