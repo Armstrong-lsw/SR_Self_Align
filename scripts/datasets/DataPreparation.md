@@ -7,7 +7,7 @@ Because R channel images data preparation is diffrent from B and G in orb_match 
 ### For training
 
 for data preparation, we follow these steps.
-1. For convenience, we rename raw dataset image name [can use ubuntu to do this]:
+1. For convenience, we rename raw dataset image name [can use other approaches to do this]:
     ```
     scripts/datasets/train/rename_sor_tar.py
     ```
@@ -39,7 +39,7 @@ Note that the size of sub-images is different from the training patch size (`gt_
 
 
 ### For testing
-1. For convenience, we rename raw dataset image name [can use ubuntu to do this]:
+1. For convenience, we rename raw dataset image name [can use other approaches to do this]:
    
 2. image warping with orb:
     ```
