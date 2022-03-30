@@ -1,6 +1,6 @@
 # Deep learning autofluorescence-harmonic microscopy
 
-This project hosts the scripts for training and testing self-alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper: https://www.nature.com/articles/s41377-022-00768-x
+This project hosts the scripts for training and testing self-alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper: https://www.nature.com/articles/s41377-022-00768-x.
 
 
 ## Introduction
@@ -30,10 +30,10 @@ Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#li
 
 3. Install DLAM
 
-    Please run the following commands in the **DLAM root path** to install DLAM:<br>
+    Please run the following commands in the **root path** to install basicsr:<br>
     (Make sure that your GCC version: gcc >= 5) <br>
     The cuda extensions: <br>
-    &emsp;[*dcn* for DLAM](basicsr/models/ops)<br>
+    &emsp;[*dcn* for basicsr](basicsr/models/ops)<br>
     are necessary.
 
     ```bash
