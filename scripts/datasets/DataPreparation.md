@@ -12,12 +12,12 @@ for data preparation, we follow these steps.
     scripts/datasets/train/rename_sor_tar.py
     ```
    
-2. image warping with orb:
+2. Image warping with orb:
     ```
     scripts/datasets/train/orb_warping.py
     ```
 
-3. crop edge pixel after warping:
+3. Crop edge pixel after warping:
     ```
     scripts/datasets/train/crop_sor_tar.py
     ```
@@ -41,17 +41,17 @@ Note that the size of sub-images is different from the training patch size (`gt_
 ### For testing
 1. For convenience, we rename raw dataset image name [can use other approaches to do this]:
    
-2. image warping with orb:
+2. Image warping with orb:
     ```
     scripts/datasets/test/test_orb_warping.py
     ```
 
-3. make validation set. Random crop test set blocks as val set.
+3. Make validation set. Random crop test set blocks as val set.
     ```
     scripts/datasets/test/val_set.py
     ```
 
-4. split big images into image tiles for memory limit: 
+4. Split big images into image tiles for memory limit: 
     ```
    scripts/datasets/test/test_split_images.py
    ```
