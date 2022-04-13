@@ -2,7 +2,7 @@
 we merge 3 channels images into RGB image for display, c1 for B channel, c2 for G channel, c3 for R channel.<br>
 
 For training, we merge R and G channel images and train one SR model; train another model for B channel images.
-Because R channel images data preparation is diffrent from B and G in orb_match step. <br>
+Because B channel images data preparation is diffrent from R and G in orb_match step. <br>
 
  Please right click the python files in the "DataPreparation/datasets/train and /test" to modify run configuration to change the working direction to root path).
 
