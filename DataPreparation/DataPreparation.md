@@ -41,7 +41,7 @@ Note that the size of sub-images is different from the training patch size (`gt_
 
 
 ### For testing
-1. For convenience, we rename raw dataset image name [can use ubuntu to do this]:
+1. For convenience, we rename raw dataset image name [can use other approaches to do this]:
    
 2. Image warping with ORB:
     ```
