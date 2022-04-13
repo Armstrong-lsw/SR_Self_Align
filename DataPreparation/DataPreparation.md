@@ -8,7 +8,7 @@ Because B channel images data preparation is diffrent from R and G in orb_match 
 
 ### For training
 
-for data preparation, we follow these steps.
+For data preparation, we follow these steps.
 1. For convenience, we rename raw dataset image name [can use other approaches to do this]:
     ```
     DataPreparation/datasets/train/1_rename_sor_tar.py
