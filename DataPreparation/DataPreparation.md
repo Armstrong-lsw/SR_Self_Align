@@ -19,7 +19,7 @@ For data preparation, we follow these steps.
     DataPreparation/datasets/train/2_orb_warping.py
     ```
 
-3. Crop edge pixel because after warping:
+3. Crop edge pixel after warping:
     ```
     DataPreparation/datasets/train/3_crop_sor_tar.py
     ```
