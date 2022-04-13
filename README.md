@@ -59,7 +59,7 @@ Please refer to [DataPreparation.md](scripts/datasets/DataPreparation.md). It ma
     Please see **[TrainTest.md](docs/TrainTest.md)** for detail.<br>
 - **Options/Configs**: Please refer to [Config.md](docs/Config.md).<br>
 For testing, you can download our pretrain model [pretrain_model_ovarian](https://drive.google.com/drive/folders/1-3Q7NRxZ38JEol6Z0EcI5niKA-DTo7KK?usp=sharing) (SR_Self_Align_x4_sesam_net_g.pth for example), and replace config pretrain_network_g in test .yml file. 
-- **Postprocessing**: Please refer to [DataPreparation](scripts/datasets/DataPreparation.md). After inference, merge sub image blocks into origin size: 
+- **Postprocessing**: Please refer to [DataPreparation](scripts/datasets/DataPreparation.md). After inference, merge sub image blocks into origin size.
 
 ## Results
 
