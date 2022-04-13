@@ -47,7 +47,7 @@ Please refer to [DataPreparation.md](scripts/datasets/DataPreparation.md). It ma
 
 ## Train and Test
 
-- **Training and testing commands**: For single gpu, use the following command as example.<br>
+- **Training and testing commands**: For single gpu, use the following command as example (please right click the train.py and test.py in the basicsr folder to modify run configuration to change the working direction to **root path**).<br>
 1. **Training**
     ```bash
     CUDA_VISIBLE_DEVICES=0 python basicsr/train.py -opt options/train/RRDAB/train_SR_Self_Align_sesam.yml
