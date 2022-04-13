@@ -37,7 +37,7 @@ Note that the size of sub-images is different from the training patch size (`gt_
    scripts/datasets/train/python scripts/create_lmdb_sor_tar.py
    ```
 
-6. make validation set after [For testing] Step. 4.
+6. make validation set after [For testing] Step. 3.
 
 
 ### For testing
