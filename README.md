@@ -42,7 +42,7 @@ Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#li
 
 ## Dataset Preparation
 
-Please refer to [DataPreparation.md](DataPreparation/DataPreparation.md). It mainly includes match the low-high resolution images with ORB algorithm and how to make train, test and val datasets.
+Please refer to [DataPreparation](DataPreparation/DataPreparation.md). It mainly includes match the low-high resolution images with ORB algorithm and how to make train, test and val datasets.
 
 
 ## Train and Test
