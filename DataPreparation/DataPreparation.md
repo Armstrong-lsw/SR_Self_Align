@@ -14,12 +14,12 @@ For data preparation, we follow these steps.
     DataPreparation/datasets/train/1_rename_sor_tar.py
     ```
    
-2. image warping with orb:
+2. Image warping with orb:
     ```
     DataPreparation/datasets/train/2_orb_warping.py
     ```
 
-3. crop edge pixel because after warping:
+3. Crop edge pixel because after warping:
     ```
     DataPreparation/datasets/train/3_crop_sor_tar.py
     ```
@@ -37,23 +37,23 @@ Note that the size of sub-images is different from the training patch size (`gt_
    DataPreparation/datasets/train/python scripts/5_create_lmdb_sor_tar.py
    ```
 
-6. make validation set after [For testing] Step. 3.
+6. Make validation set after [For testing] Step. 3.
 
 
 ### For testing
 1. For convenience, we rename raw dataset image name [can use ubuntu to do this]:
    
-2. image warping with orb:
+2. Image warping with ORB:
     ```
     DataPreparation/datasets/test/2_test_orb_warping.py
     ```
 
-3. make validation set. Random crop test set blocks as val set.
+3. Make validation set. Random crop test set blocks as val set.
     ```
     DataPreparation/datasets/test/3_val_set.py
     ```
 
-4. split big images into image tiles for memory limit: 
+4. Split big images into image tiles for memory limit: 
     ```
    DataPreparation/datasets/test/4_test_split_images.py
    ```
