@@ -14,7 +14,7 @@ For data preparation, we follow these steps.
     DataPreparation/datasets/train/1_rename_sor_tar.py
     ```
    
-2. Image warping with orb:
+2. Image warping with ORB:
     ```
     DataPreparation/datasets/train/2_orb_warping.py
     ```
