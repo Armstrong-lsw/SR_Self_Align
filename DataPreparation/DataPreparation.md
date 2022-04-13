@@ -32,7 +32,7 @@ Note that the size of sub-images is different from the training patch size (`gt_
     DataPreparation/datasets/train/4_split_subimages_sor_tar.py
     ```
 
-5. [Optional] Create LMDB files. Please refer to [LMDB Description](#LMDB-Description). 
+5. [Optional] Create LMDB files (if you dont want to use lmdb, simply change "type: lmdb" to "type: disk" in the train yml file). 
    ```
    DataPreparation/datasets/train/python scripts/5_create_lmdb_sor_tar.py
    ```
