@@ -4,22 +4,24 @@ we merge 3 channels images into RGB image for display, c1 for B channel, c2 for 
 For training, we merge R and G channel images and train one SR model; train another model for B channel images.
 Because R channel images data preparation is diffrent from B and G in orb_match step. <br>
 
+
+
 ### For training
 
 for data preparation, we follow these steps.
-1. For convenience, we rename raw dataset image name [can use ubuntu to do this]:
+1. For convenience, we rename raw dataset image name [can use other approaches to do this]:
     ```
-    scripts/datasets/train/rename_sor_tar.py
+    DataPreparation/datasets/train/1_rename_sor_tar.py
     ```
    
 2. image warping with orb:
     ```
-    scripts/datasets/train/orb_warping.py
+    DataPreparation/datasets/train/2_orb_warping.py
     ```
 
 3. crop edge pixel because after warping:
     ```
-    scripts/datasets/train/crop_sor_tar.py
+    DataPreparation/datasets/train/3_crop_sor_tar.py
     ```
 
 
@@ -27,15 +29,15 @@ for data preparation, we follow these steps.
 Note that the size of sub-images is different from the training patch size (`gt_size`) defined in the config file. Specifically, the cropped sub-images with 512x512 are stored. The dataloader will further randomly crop the sub-images to `GT_size x GT_size` patches for training. <br/>
     
     ```
-    scripts/datasets/train/split_subimages_sor_tar.py
+    DataPreparation/datasets/train/4_split_subimages_sor_tar.py
     ```
 
 5. [Optional] Create LMDB files. Please refer to [LMDB Description](#LMDB-Description). 
    ```
-   scripts/datasets/train/python scripts/create_lmdb_sor_tar.py
+   DataPreparation/datasets/train/python scripts/5_create_lmdb_sor_tar.py
    ```
 
-6. make validation set after [### For testing] Step. 4.
+6. make validation set after [### For testing] Step. 3.
 
 
 ### For testing
@@ -43,20 +45,20 @@ Note that the size of sub-images is different from the training patch size (`gt_
    
 2. image warping with orb:
     ```
-    scripts/datasets/test/test_orb_warping.py
+    DataPreparation/datasets/test/2_test_orb_warping.py
     ```
 
 3. make validation set. Random crop test set blocks as val set.
     ```
-    scripts/datasets/test/val_set.py
+    DataPreparation/datasets/test/3_val_set.py
     ```
 
 4. split big images into image tiles for memory limit: 
     ```
-   scripts/datasets/test/test_split_images.py
+   DataPreparation/datasets/test/4_test_split_images.py
    ```
    
 5. After inference, stitch image tiles into origin size: 
     ```
-    scripts/datasets/test/test_stitch_tiles.py
+    DataPreparation/datasets/test/5_test_stitch_tiles.py
     ```
