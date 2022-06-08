@@ -24,7 +24,7 @@ Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#li
 
     ```bash
     pip install -r requirements.txt
-    pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html -i https://pypi.tuna.tsinghua.edu.cn/simple scrapy
+    pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
     ```
 
 3. Install DLAM
