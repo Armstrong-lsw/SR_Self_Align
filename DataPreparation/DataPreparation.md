@@ -14,12 +14,12 @@ For data preparation, we follow these steps.
     DataPreparation/datasets/train/1_rename_sor_tar.py
     ```
    
-2. Image warping with ORB:
+2. Image warping with ORB (preregistration):
     ```
     DataPreparation/datasets/train/2_orb_warping.py
     ```
 
-3. Crop edge pixel after warping:
+3. Crop edge pixel after warping due to preregistration:
     ```
     DataPreparation/datasets/train/3_crop_sor_tar.py
     ```
@@ -43,12 +43,12 @@ Note that the size of sub-images is different from the training patch size (`gt_
 ### For testing
 1. For convenience, we rename raw dataset image name to ensure the input and target sets have the same paired names [can use other approaches to do this]:
    
-2. [Optional] Image warping with ORB:
+2. [Optional] Image warping with ORB (preregistration)::
     ```
     DataPreparation/datasets/test/2_test_orb_warping.py
     ```
 
-3. [Optional] Make validation set. Random crop test set blocks as val set.
+3. Make validation set. Random crop test set blocks as val set.
     ```
     DataPreparation/datasets/test/3_val_set.py
     ```
