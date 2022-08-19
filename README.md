@@ -62,7 +62,7 @@ For testing, you can download our pretrain model [pretrain_model_ovarian](https:
 
 📢 Results
 
-For more results and further analyses, please refer to the companion paper in our paper.
+For more results and further analyses, please refer to our paper.
 
 
 📜 Acknowledgement
