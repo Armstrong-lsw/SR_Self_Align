@@ -34,7 +34,7 @@ Note that the size of sub-images is different from the training patch size (`gt_
 
 5. [Optional] Create LMDB files (if you dont want to use lmdb, simply change "type: lmdb" to "type: disk" in the train yml file). 
    ```
-   DataPreparation/train/python scripts/5_create_lmdb_sor_tar.py
+   DataPreparation/train/5_create_lmdb_sor_tar.py
    ```
 
 6. Make validation set. Random crop test set blocks as val set.
