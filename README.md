@@ -76,4 +76,4 @@ If you find DLAM useful in your research, please consider citing this project.
 
 📧 Contact
 
-If you have any questions, please email `xintao.wang@outlook.com`.
+If you have any questions, please email `shenblin@foxmail.com`.
