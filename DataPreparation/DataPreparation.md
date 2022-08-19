@@ -37,7 +37,10 @@ Note that the size of sub-images is different from the training patch size (`gt_
    DataPreparation/datasets/train/python scripts/5_create_lmdb_sor_tar.py
    ```
 
-6. Make validation set after [For testing] Step. 3.
+6. Make validation set. Random crop test set blocks as val set.
+    ```
+    DataPreparation/datasets/train/6_val_set.py
+    ```
 
 
 ### For testing
@@ -49,17 +52,12 @@ Note that the size of sub-images is different from the training patch size (`gt_
     DataPreparation/datasets/test/2_test_orb_warping.py
     ```
 
-3. Make validation set. Random crop test set blocks as val set.
-    ```
-    DataPreparation/datasets/test/3_val_set.py
-    ```
-
-4. [Optional] Split big images into image tiles for memory limit: 
+3. [Optional] Split big images into image tiles for memory limit: 
     ```
    DataPreparation/datasets/test/4_test_split_images.py
    ```
    
-5. [Optional] After inference, stitch image tiles into origin size: 
+4. [Optional] After inference, stitch image tiles into origin size: 
     ```
     DataPreparation/datasets/test/5_test_stitch_tiles.py
     ```
