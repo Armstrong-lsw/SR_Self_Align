@@ -41,7 +41,8 @@ Note that the size of sub-images is different from the training patch size (`gt_
 
 
 ### For testing
-1. For convenience, we rename raw dataset image name to ensure that the input and target sets have the same paired names [can use other approaches to do this]:
+1. For convenience, we rename raw dataset image name to ensure that the input and target sets have the same paired names.
+
    
 2. [Optional] Image warping with ORB (preregistration)::
     ```
