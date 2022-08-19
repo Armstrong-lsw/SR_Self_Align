@@ -65,11 +65,15 @@ For testing, you can download our pretrain model [pretrain_model_ovarian](https:
 For more results and further analyses, please refer to the companion paper in our paper.
 
 
-## Acknowledgement
+## 📜 Acknowledgement
 
 Thanks [BasicSR](https://github.com/xinntao/BasicSR) auther Xintao Wang for the wonderful open source project!
 
 
-## Citation
+## 🌏 Citations
 
 If you find DLAM useful in your research, please consider citing this project.
+
+## 📧 Contact
+
+If you have any questions, please email `xintao.wang@outlook.com`.
