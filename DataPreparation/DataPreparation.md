@@ -9,7 +9,7 @@ Because B channel images data preparation is diffrent from R and G in orb_match 
 ### For training
 
 For data preparation, we follow these steps.
-1. For convenience, we rename raw dataset image name [can use other approaches to do this]:
+1. For convenience, we rename raw dataset image name to ensure the input and target sets have the same paired names [can use other approaches to do this]:
     ```
     DataPreparation/datasets/train/1_rename_sor_tar.py
     ```
@@ -41,24 +41,24 @@ Note that the size of sub-images is different from the training patch size (`gt_
 
 
 ### For testing
-1. For convenience, we rename raw dataset image name [can use other approaches to do this]:
+1. For convenience, we rename raw dataset image name to ensure the input and target sets have the same paired names [can use other approaches to do this]:
    
-2. Image warping with ORB:
+2. [Optional] Image warping with ORB:
     ```
     DataPreparation/datasets/test/2_test_orb_warping.py
     ```
 
-3. Make validation set. Random crop test set blocks as val set.
+3. [Optional] Make validation set. Random crop test set blocks as val set.
     ```
     DataPreparation/datasets/test/3_val_set.py
     ```
 
-4. Split big images into image tiles for memory limit: 
+4. [Optional] Split big images into image tiles for memory limit: 
     ```
    DataPreparation/datasets/test/4_test_split_images.py
    ```
    
-5. After inference, stitch image tiles into origin size: 
+5. [Optional] After inference, stitch image tiles into origin size: 
     ```
     DataPreparation/datasets/test/5_test_stitch_tiles.py
     ```
