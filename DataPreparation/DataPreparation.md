@@ -11,17 +11,17 @@ Because B channel images data preparation is diffrent from R and G in orb_match 
 For data preparation, we follow these steps.
 1. For convenience, we rename raw dataset image name to ensure that the input and target sets have the same paired names [can use other approaches to do this]:
     ```
-    DataPreparation/datasets/train/1_rename_sor_tar.py
+    DataPreparation/train/1_rename_sor_tar.py
     ```
    
 2. Image warping with ORB (preregistration):
     ```
-    DataPreparation/datasets/train/2_orb_warping.py
+    DataPreparation/train/2_orb_warping.py
     ```
 
 3. Crop edge pixel after warping due to preregistration:
     ```
-    DataPreparation/datasets/train/3_crop_sor_tar.py
+    DataPreparation/train/3_crop_sor_tar.py
     ```
 
 
@@ -29,17 +29,17 @@ For data preparation, we follow these steps.
 Note that the size of sub-images is different from the training patch size (`gt_size`) defined in the config file. Specifically, the cropped sub-images with 512x512 are stored. The dataloader will further randomly crop the sub-images to `GT_size x GT_size` patches for training. <br/>
     
     ```
-    DataPreparation/datasets/train/4_split_subimages_sor_tar.py
+    DataPreparation/train/4_split_subimages_sor_tar.py
     ```
 
 5. [Optional] Create LMDB files (if you dont want to use lmdb, simply change "type: lmdb" to "type: disk" in the train yml file). 
    ```
-   DataPreparation/datasets/train/python scripts/5_create_lmdb_sor_tar.py
+   DataPreparation/train/python scripts/5_create_lmdb_sor_tar.py
    ```
 
 6. Make validation set. Random crop test set blocks as val set.
     ```
-    DataPreparation/datasets/train/6_val_set.py
+    DataPreparation/train/6_val_set.py
     ```
 
 
@@ -49,15 +49,15 @@ Note that the size of sub-images is different from the training patch size (`gt_
    
 2. [Optional] Image warping with ORB (preregistration)::
     ```
-    DataPreparation/datasets/test/2_test_orb_warping.py
+    DataPreparation/test/2_test_orb_warping.py
     ```
 
 3. [Optional] Split big images into image tiles for memory limit: 
     ```
-   DataPreparation/datasets/test/4_test_split_images.py
+   DataPreparation/test/4_test_split_images.py
    ```
    
 4. [Optional] After inference, stitch image tiles into origin size: 
     ```
-    DataPreparation/datasets/test/5_test_stitch_tiles.py
+    DataPreparation/test/5_test_stitch_tiles.py
     ```
