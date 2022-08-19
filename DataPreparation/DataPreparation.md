@@ -9,7 +9,7 @@ Because B channel images data preparation is diffrent from R and G in orb_match 
 ### For training
 
 For data preparation, we follow these steps.
-1. For convenience, we rename raw dataset image name to ensure the input and target sets have the same paired names [can use other approaches to do this]:
+1. For convenience, we rename raw dataset image name to ensure that the input and target sets have the same paired names [can use other approaches to do this]:
     ```
     DataPreparation/datasets/train/1_rename_sor_tar.py
     ```
@@ -41,7 +41,7 @@ Note that the size of sub-images is different from the training patch size (`gt_
 
 
 ### For testing
-1. For convenience, we rename raw dataset image name to ensure the input and target sets have the same paired names [can use other approaches to do this]:
+1. For convenience, we rename raw dataset image name to ensure that the input and target sets have the same paired names [can use other approaches to do this]:
    
 2. [Optional] Image warping with ORB (preregistration)::
     ```
