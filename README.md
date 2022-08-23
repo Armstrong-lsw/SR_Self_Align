@@ -72,7 +72,8 @@ Thanks [BasicSR](https://github.com/xinntao/BasicSR) auther Xintao Wang for the 
 
 🌏 Citations
 
-If you find DLAM useful in your research, please consider citing this project.
+If you find DLAM useful in your research, please consider citing the paper:
+B. Shen, S. Liu, et al., Deep learning autofluorescence-harmonic microscopy, Light: Science & Applications 11, 76 (2022).
 
 📧 Contact
 
