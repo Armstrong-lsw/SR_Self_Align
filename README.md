@@ -1,6 +1,6 @@
 🚀 Deep learning autofluorescence-harmonic microscopy
 
-This project hosts the scripts for training and testing self-alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper: https://www.nature.com/articles/s41377-022-00768-x.
+This project hosts the scripts for training and testing self-alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our paper: https://www.nature.com/articles/s41377-022-00768-x; https://doi.org/10.1364/BOE.476737.
 
 
 ## Introduction
@@ -51,10 +51,12 @@ Please refer to [DataPreparation](DataPreparation/DataPreparation.md), which mai
 1. **Training**
     ```bash
     CUDA_VISIBLE_DEVICES=0 python basicsr/train.py -opt options/train/RRDAB/train_SR_Self_Align_sesam.yml
+    python basicsr/train.py -opt options/RRDAB/train_SR_Self_Align_sese.yml
     ```
 2. **Testing**
     ```bash
     CUDA_VISIBLE_DEVICES=0 python basicsr/test.py -opt options/test/RRDAB/test_SR_Self_Align_sesam.yml
+    python basicsr/test.py -opt options/RRDAB/test_SR_Self_Align_sese.yml
     ```
 
 For testing, you can download our pretrain model [pretrain_model_ovarian](https://drive.google.com/drive/folders/1-3Q7NRxZ38JEol6Z0EcI5niKA-DTo7KK?usp=sharing) (SR_Self_Align_x4_sesam_net_g.pth for example), and replace config pretrain_network_g in test .yml file. 
