@@ -41,8 +41,8 @@ datasets:
 # network structures
 network_g:
   type: RRDBDCNNetSESAM
-  num_in_ch: 3
-  num_out_ch: 3
+  num_in_ch: 1
+  num_out_ch: 1
   num_feat: 64
   num_block: 20
   num_grow_ch: 32
@@ -51,7 +51,7 @@ network_g:
 
 network_d:
   type: Discriminator
-  in_channels: 3
+  in_channels: 1
   use_sigmoid: False
 
 # path
