@@ -8,34 +8,33 @@ manual_seed: 0
 # dataset and data loader settings
 datasets:
   train:
-    name: data_ovarian_20X
+    name: data_ovarian
     type: PairedImageDataset
-    dataroot_gt: datasets/data_ovarian_20X/train_GT_rename_crop_sub.lmdb
-    dataroot_lq: datasets/data_ovarian_20X/train_input_rename_warped_crop_sub.lmdb
+    dataroot_gt: datasets/data_ovarian/train_GT_rename_crop_sub.lmdb
+    dataroot_lq: datasets/data_ovarian/train_input_rename_warped_crop_sub.lmdb
+    # (for lmdb)
+    filename_tmpl: '{}'
     io_backend:
       type: lmdb
+      # (for lmdb)
+      # type: lmdb
 
-#    dataroot_gt: datasets/data_ovarian_20X/train_GT_rename_crop_sub
-#    dataroot_lq: datasets/data_ovarian_20X/train_input_rename_warped_crop_sub
-#    io_backend:
-#      type: disk
-
-    gt_size: 512
-    use_flip: false
-    use_rot: false
+    gt_size: 256
+    use_flip: true
+    use_rot: true
 
     # data loader
     use_shuffle: true
     num_worker_per_gpu: 6
-    batch_size_per_gpu: 4
+    batch_size_per_gpu: 8
     dataset_enlarge_ratio: 100
     prefetch_mode: ~
 
   val:
-    name: data_ovarian_20X
+    name: data_ovarian
     type: PairedImageDataset
-    dataroot_gt: datasets/data_ovarian_20X/val_GT
-    dataroot_lq: datasets/data_ovarian_20X/val_input
+    dataroot_gt: datasets/data_ovarian/val_GT
+    dataroot_lq: datasets/data_ovarian/val_input
     io_backend:
       type: disk
 
@@ -79,7 +78,7 @@ train:
     milestones: [50000, 100000, 200000, 300000]
     gamma: 0.5
 
-  total_iter: 300000
+  total_iter: 400000
   warmup_iter: -1  # no warm up
 
   # losses
@@ -109,21 +108,19 @@ train:
 
 # validation settings
 val:
-  val_freq: !!float 2e3
+  val_freq: !!float 5e3
   save_img: true
 
   metrics:
     psnr: # metric name, can be arbitrary
       type: calculate_psnr
       crop_border: 4
-    ssim:
-      type: calculate_ssim
-      crop_border: 4
+      test_y_channel: false
 
 # logging settings
 logger:
   print_freq: 100
-  save_checkpoint_freq: !!float 2e3
+  save_checkpoint_freq: !!float 5e3
   use_tb_logger: true
   wandb:
     project: ~
