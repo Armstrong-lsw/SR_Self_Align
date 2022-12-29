@@ -50,12 +50,12 @@ Please refer to [DataPreparation](DataPreparation/DataPreparation.md), which mai
 - **Training and testing commands**: For single gpu, use the following command as example (please right click the train.py and test.py in the basicsr folder to modify run configuration to change the working direction to **root path**).<br>
 1. **Training**
     ```bash
-    CUDA_VISIBLE_DEVICES=0 python basicsr/train.py -opt options/train/RRDAB/train_SR_Self_Align_sesam.yml
+    CUDA_VISIBLE_DEVICES=0 python basicsr/train.py -opt options/RRDAB/train_SR_Self_Align_sesam.yml
     python basicsr/train.py -opt options/RRDAB/train_SR_Self_Align_sese.yml
     ```
 2. **Testing**
     ```bash
-    CUDA_VISIBLE_DEVICES=0 python basicsr/test.py -opt options/test/RRDAB/test_SR_Self_Align_sesam.yml
+    CUDA_VISIBLE_DEVICES=0 python basicsr/test.py -opt options/RRDAB/test_SR_Self_Align_sesam.yml
     python basicsr/test.py -opt options/RRDAB/test_SR_Self_Align_sese.yml
     ```
 
