@@ -6,19 +6,19 @@ This project hosts the scripts for training and testing self-alignment and atten
 ## Contents
 
 - [Introduction](#Introduction)
-- [Dependencies and Installation](#📕-Dependencies-and-Installation)
-- [Dataset Preparation](#📕-Dataset-Preparation)
-- [Train and Test](#⚡-Train-and-Test)
-- [Results](#📢-Results)
-- [Acknowledgement](#📜-Acknowledgement)
-- [Citation](#🌏-Citation)
+- [Dependencies and Installation](#Dependencies-and-Installation)
+- [Dataset Preparation](#Dataset-Preparation)
+- [Train and Test](#Train-and-Test)
+- [Results](#Results)
+- [Acknowledgement](#Acknowledgement)
+- [Citation](#Citation)
   
 ## Introduction
 
 Laser scanning microscopies have inherent trade-offs between imaging speed, field of view (FOV), and spatial resolution due to the limitations of sophisticated mechanical and optical setups, while deep learning networks have emerged to break through these limitations without changing the system. Here, we demonstrate deep learning autofluorescence-harmonic microscopy (DLAM) based on self-alignment attention-guided residual-in-residual dense generative adversarial networks to close the gap between speed, FOV, and quality. Using the framework, we demonstrate label-free large-field multimodal imaging of clinicopathological tissues with enhanced spatial resolution and advantages in running time. Statistical quality assessments show that the attention-guided residual dense connections minimize the obstinate noises, distortions, and scanning fringes that degrade the autofluorescence-harmonic images, and avoid reconstruction artifacts of the output images. With the advantages of high contrast, high fidelity, and high speed in image reconstruction, DLAM can act as a powerful tool for noninvasive evaluation of diseases, neural activity, and embryogenesis.
 ![DLAM](image/DLAM1.png)
 
-##📕 Dependencies and Installation
+## Dependencies and Installation
 
 Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html))
 - [PyTorch >= 1.3](https://pytorch.org/)
@@ -50,12 +50,12 @@ Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#li
     ```
    
 
-##📕 Dataset Preparation
+## Dataset Preparation
 
 Please refer to [DataPreparation](DataPreparation/DataPreparation.md), which mainly includes how to match the low-high resolution images using ORB algorithm and how to make train, test and val datasets.
 The data for training the network can be downloaded at [train data](https://figshare.com/articles/dataset/DLAM_train_data/20463939).
 
-##⚡ Train and Test
+## Train and Test
 
 - **Training and testing commands**: For single gpu, use the following command as example (please right click the train.py and test.py in the basicsr folder to modify run configuration to change the working direction to **root path**).<br>
 1. **Training**
@@ -72,17 +72,17 @@ The data for training the network can be downloaded at [train data](https://figs
 For testing, you can download our pretrain model [pretrain_model_ovarian](https://drive.google.com/drive/folders/1-3Q7NRxZ38JEol6Z0EcI5niKA-DTo7KK?usp=sharing) (SR_Self_Align_x4_sesam_net_g.pth for example), and replace config pretrain_network_g in test .yml file. 
 - **Postprocessing**: Please refer to [DataPreparation](DataPreparation/DataPreparation.md). After inference, merge sub image blocks into origin size.
 
-📢 Results
+## Results
 
 For more results and further analyses, please refer to our paper.
 
 
-📜 Acknowledgement
+## Acknowledgement
 
 Thanks [BasicSR](https://github.com/xinntao/BasicSR) auther Xintao Wang for the wonderful open source project!
 
 
-🌏 Citation
+## Citation
 
 If you find DLAM useful in your research, please consider citing the paper:
 [B. Shen, S. Liu, et al., Deep learning autofluorescence-harmonic microscopy, Light: Science & Applications 11, 76 (2022)](https://doi.org/10.1038/s41377-022-00768-x).
