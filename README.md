@@ -3,7 +3,16 @@
 This project hosts the scripts for training and testing self-alignment and attention-enhanced label-free nonlinear optical microscopy, as presented in our papers: 
 [Deep learning autofluorescence-harmonic microscopy. Light Sci Appl 11, 76 (2022)](https://doi.org/10.1038/s41377-022-00768-x); [Biomed. Opt. Express 14, 65-80 (2023)](https://doi.org/10.1364/BOE.476737).
 
+## Contents
 
+- [Introduction](#Introduction)
+- [Dependencies and Installation](#Dependencies-and-Installation)
+- [Dataset Preparation](#Dataset-Preparation)
+- [Train and Test](#Train-and-Test)
+- [Results](#Results)
+- [Acknowledgement](#Acknowledgement)
+- [Citation](#Citation)
+- 
 ## Introduction
 
 Laser scanning microscopies have inherent trade-offs between imaging speed, field of view (FOV), and spatial resolution due to the limitations of sophisticated mechanical and optical setups, while deep learning networks have emerged to break through these limitations without changing the system. Here, we demonstrate deep learning autofluorescence-harmonic microscopy (DLAM) based on self-alignment attention-guided residual-in-residual dense generative adversarial networks to close the gap between speed, FOV, and quality. Using the framework, we demonstrate label-free large-field multimodal imaging of clinicopathological tissues with enhanced spatial resolution and advantages in running time. Statistical quality assessments show that the attention-guided residual dense connections minimize the obstinate noises, distortions, and scanning fringes that degrade the autofluorescence-harmonic images, and avoid reconstruction artifacts of the output images. With the advantages of high contrast, high fidelity, and high speed in image reconstruction, DLAM can act as a powerful tool for noninvasive evaluation of diseases, neural activity, and embryogenesis.
@@ -73,11 +82,10 @@ For more results and further analyses, please refer to our paper.
 Thanks [BasicSR](https://github.com/xinntao/BasicSR) auther Xintao Wang for the wonderful open source project!
 
 
-🌏 Citations
+🌏 Citation
 
 If you find DLAM useful in your research, please consider citing the paper:
-
-B. Shen, S. Liu, et al., Deep learning autofluorescence-harmonic microscopy, Light: Science & Applications 11, 76 (2022).
+[B. Shen, S. Liu, et al., Deep learning autofluorescence-harmonic microscopy, Light: Science & Applications 11, 76 (2022)](https://doi.org/10.1038/s41377-022-00768-x).
 
 📧 Contact
 
