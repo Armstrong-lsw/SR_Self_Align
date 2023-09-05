@@ -34,6 +34,8 @@ Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#li
 
     ```bash
     pip install -r requirements.txt
+    ```
+    ```bash
     pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
     ```
 
@@ -61,11 +63,15 @@ The data for training the network can be downloaded at [train data](https://figs
 1. **Training**
     ```bash
     CUDA_VISIBLE_DEVICES=0 python basicsr/train.py -opt options/RRDAB/train_SR_Self_Align_sesam.yml
+    ```
+    ```bash
     python basicsr/train.py -opt options/RRDAB/train_SR_Self_Align_sese.yml
     ```
 2. **Testing**
     ```bash
     CUDA_VISIBLE_DEVICES=0 python basicsr/test.py -opt options/RRDAB/test_SR_Self_Align_sesam.yml
+    ```
+    ```bash
     python basicsr/test.py -opt options/RRDAB/test_SR_Self_Align_sese.yml
     ```
 
