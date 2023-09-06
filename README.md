@@ -55,7 +55,7 @@ Python >= 3.7 (Recommend to use [Anaconda](https://www.anaconda.com/download/#li
 ## Dataset Preparation
 
 Please refer to [DataPreparation](DataPreparation/DataPreparation.md), which mainly includes how to match the low-high resolution images using ORB algorithm and how to make train, test and val datasets.
-The data for training the network can be downloaded at [train data](https://figshare.com/articles/dataset/DLAM_train_data/20463939).
+The data for training the network can be downloaded [lmdb](https://figshare.com/articles/dataset/DLAM_train_data/20463939).
 
 ## Train and Test
 
